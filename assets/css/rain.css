@@ -1,0 +1,442 @@
+.rain-scene{
+
+    position:fixed;
+    inset:0;
+    background:#000;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+}
+
+.rain-scene.show{
+
+    display:flex;
+
+}
+
+.rain-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.3);
+
+    z-index:0;
+
+}
+
+/*=========================
+    AMBIENT CINEMATIC GLOW
+    Soft drifting light behind the rain -
+    reads like distant streetlamps or warm
+    porch light through the storm, giving the
+    scene depth instead of flat black.
+=========================*/
+
+.rain-ambient-glow{
+
+    position:absolute;
+    inset:-10%;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(circle at 18% 22%, rgba(255,140,170,.16), transparent 42%),
+        radial-gradient(circle at 82% 30%, rgba(255,209,102,.12), transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(138,99,255,.14), transparent 50%);
+
+    filter:blur(10px);
+
+    animation:rainGlowDrift 16s ease-in-out infinite alternate;
+
+}
+
+@keyframes rainGlowDrift{
+
+    from{ transform:translate(-2%,-1%) scale(1); }
+    to{ transform:translate(2%,2%) scale(1.08); }
+
+}
+
+/*=========================
+    VIGNETTE
+    Darkens the edges so the eye is pulled
+    toward the photos at the center - the
+    classic "cinematic frame" look.
+=========================*/
+
+.rain-vignette{
+
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+
+    background:radial-gradient(
+
+        ellipse at center,
+
+        transparent 42%,
+
+        rgba(0,0,0,.55) 100%
+
+    );
+
+}
+
+#rainCanvas{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:1;
+
+}
+
+.rain-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    perspective:900px;
+
+}
+
+.meet-photo-stack{
+
+    position:relative;
+
+    width:300px;
+
+    height:360px;
+
+    margin:0 auto;
+
+    transition:transform .5s ease-out;
+
+    transform-style:preserve-3d;
+
+}
+
+.rain-scene.shake{
+
+    animation:thunderShake .35s;
+
+}
+
+@keyframes thunderShake{
+
+    0%,100%{ transform:translate(0,0); }
+    20%{ transform:translate(-6px,3px); }
+    40%{ transform:translate(5px,-4px); }
+    60%{ transform:translate(-4px,2px); }
+    80%{ transform:translate(3px,-2px); }
+
+}
+
+/*=========================
+LIGHTNING
+=========================*/
+
+.lightning-flash{
+
+    position:absolute;
+    inset:0;
+
+    background:#eaf2ff;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    mix-blend-mode:screen;
+
+    z-index:5;
+
+}
+
+.lightning-flash.flash{
+
+    animation:lightningStrike .45s ease-out;
+
+}
+
+@keyframes lightningStrike{
+
+    0%{ opacity:0; }
+    8%{ opacity:.95; }
+    16%{ opacity:.15; }
+    24%{ opacity:.75; }
+    40%{ opacity:0; }
+    100%{ opacity:0; }
+
+}
+
+/*=========================
+MEET PHOTO CAROUSEL
+(polaroid crossfade + Ken Burns zoom)
+=========================*/
+
+.meet-photo-frame{
+
+    position:absolute;
+
+    inset:0;
+
+    border:10px solid #fff;
+
+    border-bottom:38px solid #fff;
+
+    border-radius:4px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.55);
+
+    opacity:0;
+
+    transform:scale(1) rotate(-2deg);
+
+    transition:opacity 1.6s ease;
+
+    pointer-events:none;
+
+}
+
+.meet-photo-frame:nth-child(even){
+
+    transform:scale(1) rotate(2deg);
+
+}
+
+.meet-photo-frame img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.05);
+
+}
+
+.meet-photo-frame.active{
+
+    opacity:1;
+
+    z-index:2;
+
+    animation:photoGlow 3.2s ease-in-out infinite;
+
+}
+
+.meet-photo-frame.active img{
+
+    animation:kenBurnsPan 6s ease forwards;
+
+}
+
+@keyframes kenBurnsPan{
+
+    0%{
+
+        transform:scale(1.06) translate(0,0);
+
+    }
+
+    50%{
+
+        transform:scale(1.16) translate(-2%,-1%);
+
+    }
+
+    100%{
+
+        transform:scale(1.26) translate(-3%,-2%);
+
+    }
+
+}
+
+@keyframes photoGlow{
+
+    0%,100%{
+
+        box-shadow:0 25px 60px rgba(0,0,0,.55), 0 0 20px rgba(255,255,255,.12);
+
+    }
+
+    50%{
+
+        box-shadow:0 25px 70px rgba(0,0,0,.6), 0 0 40px rgba(255,209,102,.4);
+
+    }
+
+}
+
+/* Soft light sweep across the photo, like a reflection catching the light */
+
+.meet-photo-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.4) 50%, transparent 58%);
+
+    background-size:280% 280%;
+
+    background-position:-120% -120%;
+
+    pointer-events:none;
+
+}
+
+.meet-photo-frame.active::after{
+
+    animation:photoShimmer 5s ease-in-out infinite;
+
+}
+
+@keyframes photoShimmer{
+
+    0%{ background-position:-120% -120%; }
+    50%{ background-position:220% 220%; }
+    100%{ background-position:-120% -120%; }
+
+}
+
+/*=========================
+    MEET DIVIDER
+=========================*/
+
+.meet-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:min(180px,50%);
+
+    margin:26px auto 0;
+
+    color:rgba(255,209,102,.8);
+
+    font-size:12px;
+
+    opacity:0;
+
+    animation:meetFadeIn 1.4s ease forwards 1.6s;
+
+}
+
+.meet-divider span{
+
+    flex:1;
+
+    height:1px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+}
+
+@keyframes meetFadeIn{
+
+    from{ opacity:0; transform:translateY(8px); }
+    to{ opacity:1; transform:translateY(0); }
+
+}
+
+.rain-content h2{
+
+    margin-top:22px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:36px;
+
+    letter-spacing:.5px;
+
+    text-shadow:0 4px 30px rgba(255,209,102,.35);
+
+    opacity:0;
+
+    transform:translateY(14px);
+
+    transition:opacity 1.6s ease, transform 1.6s ease;
+
+}
+
+.rain-content h2.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.rain-content p{
+
+    margin-top:12px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:20px;
+
+    font-style:italic;
+
+    color:#e8dfff;
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    transition:opacity 1.6s ease, transform 1.6s ease;
+
+}
+
+.rain-content p.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}

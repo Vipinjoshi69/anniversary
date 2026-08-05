@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Universe ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/phone.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/rain.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/letter.css">
+    <link rel="stylesheet" href="assets/css/ending.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+            CURSOR
+    ============================ -->
+
+    <div id="cursor"></div>
+
+    <!-- ===========================
+            LOADER
+    ============================ -->
+
+    <section id="loader">
+
+        <div class="loader-glow" aria-hidden="true"></div>
+
+        <div class="loader-particles" aria-hidden="true">
+
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+            <span class="lp-orb"></span>
+
+        </div>
+
+        <div class="loader-box">
+
+            <div id="loaderHeart">
+                ❤️
+            </div>
+
+            <div id="loaderText">
+
+            </div>
+            <div class="loader-progress">
+
+                <span id="progressBar"></span>
+
+            </div>
+
+            <p class="loader-footer">
+
+                Our Universe ❤️
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===========================
+          GALAXY BACKGROUND
+    ============================ -->
+
+    <div id="background">
+
+        <canvas id="starsCanvas"></canvas>
+
+        <div class="aurora aurora-left"></div>
+
+        <div class="aurora aurora-right"></div>
+
+    </div>
+
+    <!-- ===========================
+          LANDING PAGE
+    ============================ -->
+
+    <section id="landing">
+
+        <div class="landing-sparkles" aria-hidden="true">
+
+            <i class="fa-solid fa-heart spark spark-1"></i>
+            <i class="fa-solid fa-star spark spark-2"></i>
+            <i class="fa-solid fa-heart spark spark-3"></i>
+            <i class="fa-solid fa-star spark spark-4"></i>
+            <i class="fa-solid fa-heart spark spark-5"></i>
+
+        </div>
+
+        <div class="glass-card">
+
+            <p class="small-title">
+                MADE ESPECIALLY FOR
+            </p>
+
+            <h1>
+
+                Manisha ❤️
+
+            </h1>
+
+            <div class="title-divider">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+
+            <p class="hero-text">
+
+                Every beautiful love story deserves to be remembered
+                forever - and ours began with one small word, typed
+                almost by accident, that quietly turned into everything.
+
+            </p>
+
+            <p class="hero-subtext">
+
+                Every chapter is right here. Ready to live it again?
+
+            </p>
+
+            <button id="beginBtn">
+
+                <span>Begin Our Story</span>
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+           PHONE COMPONENT
+    ============================ -->
+
+    <section id="phoneScene">
+
+        <div class="phone">
+
+            <!-- Dynamic Island -->
+            <div class="dynamic-island"></div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+
+                <span id="phoneClock">9:41</span>
+
+                <div class="status-icons">
+
+                    <i class="fa-solid fa-signal"></i>
+
+                    <i class="fa-solid fa-wifi"></i>
+
+                    <i class="fa-solid fa-battery-full"></i>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                LOCK SCREEN
+        ========================== -->
+
+            <div id="lockScreen" class="lock-screen" style="background-image:url('assets/images/wallpaper.jpg');">
+
+                <div>
+
+                    <div class="phone-time">
+                        9:41
+                    </div>
+
+                    <div class="phone-date">
+                        Monday, 18 August
+                    </div>
+
+                </div>
+
+                <div id="unlockArea" class="swipe-up">
+
+                    <div class="swipe-line"></div>
+
+                    <span>Tap to Unlock</span>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                HOME SCREEN
+        ========================== -->
+
+            <div id="homeScreen" class="home-screen">
+
+                <div class="app-grid">
+
+                    <div id="whatsappApp" class="app unlocked" data-app="whatsapp">
+
+                        <div class="app-icon app-icon-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div class="lock-badge"><i class="fa-solid fa-lock"></i></div>
+                        </div>
+
+                        <span>WhatsApp</span>
+
+                    </div>
+
+                    <div id="firstMeetApp" class="app locked" data-app="firstMeet">
+
+                        <div class="app-icon app-icon-firstmeet">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                            <div class="lock-badge"><i class="fa-solid fa-lock"></i></div>
+                        </div>
+
+                        <span>First Meet</span>
+
+                    </div>
+
+                    <div id="memoriesApp" class="app locked" data-app="memories">
+
+                        <div class="app-icon app-icon-memories">
+                            <i class="fa-solid fa-images"></i>
+                            <div class="lock-badge"><i class="fa-solid fa-lock"></i></div>
+                        </div>
+
+                        <span>Memories</span>
+
+                    </div>
+
+                    <div id="letterApp" class="app locked" data-app="letter">
+
+                        <div class="app-icon app-icon-letter">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                            <div class="lock-badge"><i class="fa-solid fa-lock"></i></div>
+                        </div>
+
+                        <span>Letter</span>
+
+                    </div>
+
+                    <div id="foreverApp" class="app locked" data-app="forever">
+
+                        <div class="app-icon app-icon-forever">
+                            <i class="fa-solid fa-infinity"></i>
+                            <div class="lock-badge"><i class="fa-solid fa-lock"></i></div>
+                        </div>
+
+                        <span>Forever</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+        WHATSAPP
+========================= -->
+
+            <div id="whatsappScreen" class="whatsapp-screen">
+
+                <div class="whatsapp-header">
+
+                    <button id="whatsappBackBtn" class="header-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+                    <img src="assets/images/3.jpg" alt="Manisha" class="profile-photo">
+
+                    <div class="chat-info">
+                        <h3>Manisha ❤️</h3>
+                        <small>online</small>
+                    </div>
+
+                    <div class="header-icons">
+                        <i class="fa-solid fa-video"></i>
+                        <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+                </div>
+
+                <div class="chat-area">
+
+                    <div id="chatContainer">
+
+                    </div>
+
+                    <div id="typingIndicator" class="typing">
+
+                        <span></span>
+
+                        <span></span>
+
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+                <div class="chat-input">
+
+                    <input placeholder="Type a message..." readonly>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="rainScene" class="rain-scene">
+
+        <canvas id="rainCanvas"></canvas>
+
+        <div class="rain-ambient-glow" aria-hidden="true"></div>
+
+        <div class="rain-overlay"></div>
+
+        <div class="rain-vignette" aria-hidden="true"></div>
+
+        <div id="lightningFlash" class="lightning-flash"></div>
+
+        <button id="rainBackBtn" class="scene-back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Home
+        </button>
+
+        <div class="rain-content">
+
+            <div id="meetPhotoStack" class="meet-photo-stack">
+
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/1.jpg" alt="First Meet">
+                </div>
+
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/2.jpg" alt="First Meet">
+                </div>
+
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/3.jpg" alt="First Meet">
+                </div>
+
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/4.jpg" alt="First Meet">
+                </div>
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/5.jpg" alt="First Meet">
+                </div>
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/6.jpg" alt="First Meet">
+                </div>
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/7.jpg" alt="First Meet">
+                </div>
+                <div class="meet-photo-frame">
+                    <img class="meet-photo" src="assets/images/8.jpg" alt="First Meet">
+                </div>
+
+            </div>
+
+            <div class="meet-divider" aria-hidden="true">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+
+            <h2>10 September 2022</h2>
+
+            <p>The day we finally met ❤️</p>
+
+        </div>
+
+        <audio id="rainAudio" src="assets/audio/Barbaad.mp3" preload="auto">
+        </audio>
+
+        <audio id="thunder1" src="assets/audio/rain-ambience.mp3" preload="auto"></audio>
+        <audio id="thunder2" src="assets/audio/thunder-1.mp3" preload="auto"></audio>
+        <audio id="thunder3" src="assets/audio/thunder-3.mp3" preload="auto"></audio>
+
+    </section>
+    <!-- ===========================
+           GALLERY (Memories)
+    ============================ -->
+
+    <section id="gallery" class="gallery-scene">
+
+        <div class="gallery-ambient" aria-hidden="true">
+
+            <span class="g-bokeh gb-1"></span>
+            <span class="g-bokeh gb-2"></span>
+            <span class="g-bokeh gb-3"></span>
+
+            <i class="fa-solid fa-heart g-heart gh-1"></i>
+            <i class="fa-solid fa-heart g-heart gh-2"></i>
+            <i class="fa-solid fa-heart g-heart gh-3"></i>
+            <i class="fa-solid fa-heart g-heart gh-4"></i>
+            <i class="fa-solid fa-heart g-heart gh-5"></i>
+            <i class="fa-solid fa-heart g-heart gh-6"></i>
+
+        </div>
+
+        <button id="galleryBackBtn" class="scene-back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Home
+        </button>
+
+        <div class="gallery-header">
+            <h2>Our Memories</h2>
+            <div class="gallery-divider" aria-hidden="true">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+            <p>Every picture, a heartbeat 💛</p>
+        </div>
+
+        <div class="gallery-track" id="galleryTrack"></div>
+
+        <div class="gallery-nav">
+
+            <button id="galleryPrev" class="gallery-arrow">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="gallery-dots" id="galleryDots"></div>
+
+            <button id="galleryNext" class="gallery-arrow">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+        <div class="gallery-counter" id="galleryCounter"></div>
+
+    </section>
+
+    <!-- ===========================
+           LETTER
+    ============================ -->
+
+    <section id="letter" class="letter-scene">
+
+        <div class="letter-ambient" aria-hidden="true">
+
+            <span class="l-glow"></span>
+
+            <i class="fa-solid fa-heart l-heart lh-1"></i>
+            <i class="fa-solid fa-heart l-heart lh-2"></i>
+            <i class="fa-solid fa-heart l-heart lh-3"></i>
+            <i class="fa-solid fa-heart l-heart lh-4"></i>
+            <i class="fa-solid fa-heart l-heart lh-5"></i>
+
+        </div>
+
+        <button id="letterBackBtn" class="scene-back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Home
+        </button>
+
+        <div class="letter-paper">
+
+            <div class="letter-header">To My Manisha ❤️</div>
+
+            <div class="letter-body" id="letterBody"></div>
+
+            <div class="letter-signature">Forever Yours,<br>Vipin</div>
+
+        </div>
+
+        <button id="letterContinueBtn" class="continue-btn">
+            Continue Our Story →
+        </button>
+
+    </section>
+
+    <!-- ===========================
+           ENDING (Forever)
+    ============================ -->
+
+    <section id="ending" class="ending-scene">
+
+        <canvas id="fireworksCanvas"></canvas>
+
+        <div class="journey-gallery" id="journeyGallery" aria-hidden="true">
+
+            <figure class="journey-photo jp-1">
+                <img src="assets/images/4.jpg" alt="Where it began">
+                <figcaption>Where it began</figcaption>
+            </figure>
+
+            <figure class="journey-photo jp-2">
+                <img src="assets/images/5.jpg" alt="Our Snapchat era">
+                <figcaption>Our Snapchat era</figcaption>
+            </figure>
+
+            <figure class="journey-photo jp-3">
+                <img src="assets/images/10.jpg" alt="The rainy first meet">
+                <figcaption>The rainy first meet</figcaption>
+            </figure>
+
+            <figure class="journey-photo jp-4">
+                <img src="assets/images/14.jpg" alt="Our first hug">
+                <figcaption>Our first hug</figcaption>
+            </figure>
+
+            <figure class="journey-photo jp-5">
+                <img src="assets/images/13.jpg" alt="Baby Doll era">
+                <figcaption>Baby Doll era</figcaption>
+            </figure>
+
+            <figure class="journey-photo jp-6">
+                <img src="assets/images/17.jpg" alt="Every ordinary day since">
+                <figcaption>Every ordinary day since</figcaption>
+            </figure>
+
+        </div>
+
+        <div class="ending-content">
+
+            <div class="bestphoto-wrap">
+
+                <img id="bestPhoto" src="assets/images/best-photo.jpg" alt="Us">
+
+            </div>
+
+            <h1 class="ending-title">Happy Anniversary</h1>
+
+            <p class="ending-subtitle">Forever Yours,<br>Vipin</p>
+
+            <button id="endingHomeBtn" class="ending-home-link">Back to Home</button>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+            MUSIC
+    ============================ -->
+
+    <audio id="bgMusic" loop>
+
+        <source src="assets/music/bg.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <audio id="bgMusic2" loop>
+
+        <source src="assets/music/Barbaad.mp3" type="audio/mpeg">
+
+    </audio>
+    <div id="storyTransition">
+
+        <p id="transitionText"></p>
+
+    </div>
+    <div id="imageViewer">
+
+        <span id="closeImage">✕
+
+        </span>
+
+        <img id="viewerImage">
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="assets/js/stars.js"></script>
+    <script src="assets/js/chatEngine.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/chat.js"></script>
+    <script src="assets/js/rain.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/letter.js"></script>
+    <script src="assets/js/music.js"></script>
+    <script src="assets/js/ending.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
