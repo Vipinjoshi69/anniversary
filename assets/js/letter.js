@@ -30,7 +30,7 @@ const letterParagraphs = [
 
     "Even today, whenever something good happens, you're the first person I want to tell. Whenever life feels difficult, you're the first person I want beside me. No matter how much time passes, one thing never changes... my heart still looks for you in every beautiful moment.",
 
-    "Manisha, from one simple <em>'Hi'</em> to thousands of messages, countless smiles, endless memories, and dreams of forever... you've given my life a meaning I never knew it was missing. Thank you for every laugh, every hug, every late-night conversation, every 'Good Morning', every 'Miss You', and every little moment that slowly became the most precious memories of my life.",
+    "Jaan, from one simple <em>'Hi'</em> to thousands of messages, countless smiles, endless memories, and dreams of forever... you've given my life a meaning I never knew it was missing. Thank you for every laugh, every hug, every late-night conversation, every 'Good Morning', every 'Miss You', and every little moment that slowly became the most precious memories of my life.",
 
     "I don't just love you because you're beautiful. I love you because you've become my peace, my happiness, my safest place, and the person I want beside me in every chapter still waiting to be written. If I had the chance to live this life again, I'd still choose you... every single time. ❤️"
 
