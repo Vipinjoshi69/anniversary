@@ -11,11 +11,9 @@ const bootLines = [
 
     "Decrypting Happiness...",
 
-    "Searching For Manisha...",
+    "Searching For Jaan...",
 
-    "Identity Confirmed ❤️",
-
-    "Welcome Back, Manisha."
+    "Identity Confirmed ❤️"
 
 ];
 
