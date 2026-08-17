@@ -111,17 +111,17 @@ const memoryPhotos = [
         date: ""
     },
     {
-        src: "images2/Memories/22.jpg",
+        src: "images2/Memories/22.JPG",
         caption: "",
         date: ""
     },
     {
-        src: "images2/Memories/23.jpg",
+        src: "images2/Memories/23.JPG",
         caption: "",
         date: ""
     },
     {
-        src: "images2/Memories/24.jpg",
+        src: "images2/Memories/24.JPG",
         caption: "",
         date: ""
     },
